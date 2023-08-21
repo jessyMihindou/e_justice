@@ -1,0 +1,9 @@
+
+  <h2>Bienvenue, {{ user.nom }} !</h2>
+  <p>Vous êtes un citoyen étranger. Veuillez remplir le formulaire ci-dessous pour enregistrer votre demande.</p>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Enregistrer</button>
+  </form>
+

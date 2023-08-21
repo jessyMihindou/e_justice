@@ -1,0 +1,7 @@
+<!-- user_demande_delete.html -->
+<h1>Delete Demande</h1>
+<form method="post">
+  {% csrf_token %}
+  <p>Are you sure you want to delete this demande?</p>
+  <button type="submit">Yes, delete</button>
+</form>

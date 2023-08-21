@@ -1,0 +1,10 @@
+<!-- justiceApp/citoyen_gabon_registry.html -->
+
+  <h2>Bienvenue, {{ user.nom }} !</h2>
+  <p>Vous êtes un citoyen gabonais. Veuillez remplir le formulaire ci-dessous pour enregistrer votre demande.</p>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Enregistrer</button>
+  </form>
+

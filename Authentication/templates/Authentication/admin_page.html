@@ -1,0 +1,55 @@
+<div class="container mt-5">
+    <div class="content-container">
+        <h1 class="text-center mb-4">Bienvenue sur notre plateforme Admin!</h1>
+        {% if user.is_authenticated %}
+            <p>Merci de vous être connecté, {{ user.nom }} !</p>
+            <p>vos information , {{ user.telephone }}</p>
+        {% endif %}
+        <!-- Reste du contenu de la page d'accueil -->
+        <a href="{% url 'logout' %}" class="btn btn-danger">Déconnexion</a>
+    </div>
+</div>
+
+<h1>Admin Page</h1>
+<table>
+  <tr>
+    <th>Nom</th>
+    <th>Prénom</th>
+    <th>Nationalité</th>
+    <th>Fichier document identité</th>
+    <th>Lieu naissance</th>
+    <th>Date naissance</th>
+    <th>Adresse</th>
+    <th>Code postal</th>
+    <th>Ville</th>
+    <th>Pays</th>
+    <th>Justificatif domicile</th>
+    <th>Statut</th>
+    <th>Actions</th>
+  </tr>
+  {% for demande in demandes %}
+  <tr>
+    <td>{{ demande.utilisateur.nom }}</td>
+    <td>{{ demande.utilisateur.prenom }}</td>
+    <td>{{ demande.utilisateur.get_nationalite_display }}</td>
+    <td>{{ demande.fichier_document_identite }}</td>
+    <td>{{ demande.lieu_naissance }}</td>
+    <td>{{ demande.date_naissance }}</td>
+    <td>{{ demande.adresse }}</td>
+    <td>{{ demande.code_postal }}</td>
+    <td>{{ demande.ville }}</td>
+    <td>{{ demande.pays }}</td>
+    <td>{{ demande.justificatif_domicile }}</td>
+    <td>{{ demande.get_statut_display }}</td>
+    <td><a href="{% url 'user_demande_update' telephone=demande.utilisateur.telephone %}">Modifier</a><a href="{% url 'user_demande_delete' telephone=demande.utilisateur.telephone %}">Supprimer</a></td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}

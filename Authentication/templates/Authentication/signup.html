@@ -1,0 +1,42 @@
+<div class="container mt-5">
+    <div class="content-container">
+        <h1 class="text-center mb-4">Inscription</h1>
+        <form method="post">
+            {% csrf_token %}
+            {% if form.errors %}
+                <div class="alert alert-danger">
+                    {{ form.errors }}
+                </div>
+            {% endif %}
+            <div class="form-group">
+                <label for="{{ form.nom.id_for_label }}">Nom</label>
+                <input type="text" class="form-control" id="{{ form.nom.id_for_label }}" name="{{ form.nom.name }}" value="{{ form.nom.value }}">
+            </div>
+            <div class="form-group">
+                <label for="{{ form.prenom.id_for_label }}">Prénom</label>
+                <input type="text" class="form-control" id="{{ form.prenom.id_for_label }}" name="{{ form.prenom.name }}" value="{{ form.prenom.value }}">
+            </div>
+            <div class="form-group">
+                <label for="{{ form.telephone.id_for_label }}">Numéro de téléphone</label>
+                <input type="tel" class="form-control" id="{{ form.telephone.id_for_label }}" name="{{ form.telephone.name }}" value="{{ form.telephone.value }}">
+            </div>
+            <div class="form-group">
+                <label for="{{ form.nationalite.id_for_label }}">Nationalité</label>
+                <select class="form-control" id="{{ form.nationalite.id_for_label }}" name="{{ form.nationalite.name }}">
+                    {% for value, label in form.nationalite.field.choices %}
+                        <option value="{{ value }}">{{ label }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="{{ form.password1.id_for_label }}">Mot de passe</label>
+                <input type="password" class="form-control" id="{{ form.password1.id_for_label }}" name="{{ form.password1.name }}">
+            </div>
+            <div class="form-group">
+                <label for="{{ form.password2.id_for_label }}">Confirmer le mot de passe</label>
+                <input type="password" class="form-control" id="{{ form.password2.id_for_label }}" name="{{ form.password2.name }}">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" style="max-width: 200px; margin: 0 auto;">S’inscrire</button>
+        </form>
+    </div>
+</div>

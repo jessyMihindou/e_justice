@@ -1,0 +1,17 @@
+  <div class="container mt-5">
+        <div class="content-container">
+            <h1 class="text-center mb-4">Bienvenue sur notre plateforme !</h1>
+            {% if user.is_authenticated %}
+                <p>Vous etes du {{ user.nationalite }} !</p>
+                <p>Merci de vous être connecté, {{ user.nom }} !</p>
+                <p>vos information , {{ user.telephone }}</p>
+                <p>Nationalité: {{ demande.pays }}</p>
+                <p>Type de document d'identité: {{ demande.type_document_identite }}</p>
+                <p>statut de la demande : {{ demande.statut }}</p>
+
+            {% endif %}
+            <a href="{% url 'logout' %}" class="btn btn-danger">Déconnexion</a>
+
+        </div>
+    </div>
+

@@ -1,0 +1,6 @@
+<h1>Delete User {{ user.nom }}</h1>
+<form method="post">
+  {% csrf_token %}
+  <p>Are you sure you want to delete this user?</p>
+  <button type="submit">Yes, delete</button>
+</form>
