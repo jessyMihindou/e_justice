@@ -4,6 +4,8 @@
 
 `eJustice` est une application web conçue pour faciliter la demande et la gestion des casiers judiciaires. Développée en utilisant Django, l'application permet aux utilisateurs de soumettre des demandes en ligne et de suivre leur statut. Le projet utilise Docker pour l'environnement de conteneurisation et Terraform pour la gestion de l'infrastructure.
 
+(https://files.ia.ca/-/media/files/ia/zoneconseilsv2/auto/2023/images-couleur/quoi-faire-pour-eviter-la-fatigue-au-volant.jpg)
+
 ## Fonctionnalités
 
 - **Demande de Casier Judiciaire** : Soumettre des demandes en ligne de manière sécurisée.
