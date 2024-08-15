@@ -4,7 +4,7 @@
 
 `eJustice` est une application web conçue pour faciliter la demande et la gestion des casiers judiciaires. Développée en utilisant Django, l'application permet aux utilisateurs de soumettre des demandes en ligne et de suivre leur statut. Le projet utilise Docker pour l'environnement de conteneurisation et Terraform pour la gestion de l'infrastructure.
 
-![eJustice Application]([https://example.com/path/to/your/image.png](https://www.lopinion.ma/photo/art/grande/78323668-56854998.jpg?v=1707754536)) 
+![eJustice Application]([https://example.com/path/to/your/image.png](https://www.lopinion.ma/photo/art/grande/78323668-56854998.jpg?v=1707754536) 
 
 ## Fonctionnalités
 
